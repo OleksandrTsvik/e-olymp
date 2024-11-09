@@ -1,0 +1,28 @@
+# Build results
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio
+.vs/
+
+# VS Code files for those working on multiple tools
+.vscode/
+*.code-workspace
+
+# Node.js
+node_modules/
+
+# Python
+__pycache__/
+*.pyc
+
+# JetBrains
+.idea/
+.fleet
+.project
+*.sln.iml
+
+# Folder config file
+[Dd]esktop.ini
