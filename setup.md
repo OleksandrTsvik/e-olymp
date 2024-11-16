@@ -87,6 +87,21 @@ Add the following file `Program.runtimeconfig.json` to the `bin/csharp` director
 
 To run C++ code, install [MSYS2](https://www.msys2.org/) or use [Dev-C++](https://www.bloodshed.net/).
 
+### Reading an unknown number of inputs
+
+```c++
+const int MAX_SIZE = 1000;
+
+int array[MAX_SIZE];
+int index = 0;
+int input;
+
+while (cin >> input) {
+  array[index] = input;
+  index++;
+}
+```
+
 ## C#
 
 To run C# code, make sure to install the [.NET SDK](https://dotnet.microsoft.com/en-us/download).
@@ -99,6 +114,43 @@ or [PyCharm](https://www.jetbrains.com/pycharm/).
 ## JavaScript
 
 To run JS code, make sure [Node.js](https://nodejs.org/) is installed.
+
+### I. Reading data
+
+```javascript
+var scanf = require('scanf');
+var n = scanf('%d');
+
+// ...
+```
+
+### II. Reading an unknown number of inputs
+
+```javascript
+const readline = require('readline');
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+const lines = [];
+
+rl
+  .on("line", line => lines.push(line))
+  .on("close", () => {
+    let [n, weights] = lines;
+
+    n = +n;
+    weights = weights?.split(' ').map(weight => +weight).slice(0, n) ?? [];
+
+    solve(n, weights);
+  });
+
+function solve(n, weights) {
+  // ...
+}
+```
 
 ## Pascal
 
